@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/23 18:28:07 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:32:52 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int	ft_check(va_list ptr, char c)
 	else if (c == 'p')
 		len += ft_putnbr_hex();
 	else if ((c == 'd') || (c == 'i'))
-		len += ft_putnbr_base(va_arg(int, char *), "0123456789");
+		len += ft_putnbr_base(va_arg(ptr, int), "0123456789");
 	else if (c == 'u')
-		len += ft_putnbr();
+		len += ft_putnbr_base(va_arg(ptr, int), "0123456789");
 	else if (c == 'x')
-		len += ft_putnbr_hex();
+		len += ft_putnbr_base(va_arg(ptr, int), "0123456789abcdef");
 	else if (c == 'X')
-		len += ft_putnbr_hex();
+		len += ft_putnbr_base(va_arg(ptr, int), "0123456789ABCDEF");
 	else if (c == '%')
-		len += ft_putnbr_hex();
+		len += ft_putchar('%');
 	return (len);
 }
 
