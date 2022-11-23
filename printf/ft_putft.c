@@ -6,7 +6,7 @@
 /*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:05:52 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/23 16:41:11 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:23:44 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_putnbr(int n, char *base)
+int	ft_putnbr_base(int n, char *base)
 {
 	long int	modulo;
 	long int	division;
