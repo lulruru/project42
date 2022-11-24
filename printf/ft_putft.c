@@ -3,29 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putft.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:05:52 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/23 18:23:44 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/24 10:45:48 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	ft_putchar(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (str == NULL)
 	{
-		ft_putchar(str[i]);
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i])
+	{
+		write(1, &str[i], 1);
 		i++;
 	}
 	return (i);
@@ -35,9 +40,9 @@ size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
-	i == 0;
+	i = 0;
 	if (!str)
-		return (NULL);
+		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);
@@ -62,7 +67,7 @@ int	ft_putnbr_base(int n, char *base)
 	modulo = longnb % lenbase;
 	if (division != 0)
 	{
-		ft_putnbr(division, base);
+		ft_putnbr_base(division, base);
 		i++;
 	}
 	write(1, &base[modulo], 1);
