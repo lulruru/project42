@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putft.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:05:52 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 12:17:06 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/24 17:32:53 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	ft_putnbr_base(int n, char *base)
 	{
 		longnb *= (-1);
 		ft_putchar('-');
+		i++;
 	}
 	division = longnb / lenbase;
 	modulo = longnb % lenbase;

@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 17:39:42 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 17:59:43 by rencarna         ###   ########.fr       */
+/*   Created: 2022/11/24 17:34:40 by rencarna          #+#    #+#             */
+/*   Updated: 2022/11/24 18:09:00 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <ft_printf.h>
 
-# include <stdarg.h>
-# include <stddef.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdint.h>
+int	len_ptr(uintptr_t	num)
+{
+	int	len;
 
-int		ft_printf(const char *str, ...);
-int		ft_check(va_list ptr, char c);
-int		ft_putchar(int c);
-int		ft_putstr(char *str);
-int		ft_putnbr_base(int n, char *base);
-size_t	ft_strlen(char *str);
-int		ft_putunsigned(unsigned int n);
+	len = 0;
+	while (num != 0)
+	{
+		num /= 16;
+		len++;
+	}
+	return (len);
+}
 
-#endif
+void	putptr(uintptr_t	num)
+{
+	if (num >= 16)
+	{
+		putptr(num / 16);
+		putptr(num % 16);
+	}
+	else
+	{
+		if (num <= 9 )
+			ft_putchar(num + '0')
+		else
+			ft_putchar(num - 10 +'a')
+	}
+}
+

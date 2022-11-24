@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 12:18:09 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/24 17:55:53 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_check(va_list ptr, const char c)
 	else if ((c == 'd') || (c == 'i'))
 		len += ft_putnbr_base(va_arg(ptr, int), "0123456789");
 	else if (c == 'u')
-		len += ft_putnbr_base(va_arg(ptr, unsigned int), "0123456789");
+		len += ft_putunsigned(va_arg(ptr, long long), "0123456789");
 	else if (c == 'x')
 		len += ft_putnbr_base(va_arg(ptr, int), "0123456789abcdef");
 	else if (c == 'X')
@@ -57,14 +57,14 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(ptr);
-	return(len);
+	return (len);
 }
 
-int main()
+/*int main()
 {
 	int i;
 	i = 123;
 	char *str;
-	str = "cbsiucs";
-	ft_printf("%d", i);
-}
+	str = "je suis drole";
+	ft_printf("%s %d", str, i);
+}*/
