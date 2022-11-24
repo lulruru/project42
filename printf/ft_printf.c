@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 10:48:24 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/24 12:18:09 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ int	ft_printf(const char *str, ...)
 	return(len);
 }
 
-/*int main()
+int main()
 {
 	int i;
 	i = 123;
 	char *str;
 	str = "cbsiucs";
-	ft_printf("%x", i);
-}*/
+	ft_printf("%d", i);
+}
