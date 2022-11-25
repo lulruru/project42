@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putft.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:05:52 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 17:32:53 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:15:10 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,30 +48,5 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_putnbr_base(int n, char *base)
-{
-	long int	modulo;
-	long int	division;
-	long int	longnb;
-	int			lenbase;
-	static int	i;
-
-	longnb = n;
-	lenbase = ft_strlen(base);
-	if (longnb < 0)
-	{
-		longnb *= (-1);
-		ft_putchar('-');
-		i++;
-	}
-	division = longnb / lenbase;
-	modulo = longnb % lenbase;
-	if (division != 0)
-	{
-		ft_putnbr_base(division, base);
-		i++;
-	}
-	write(1, &base[modulo], 1);
-	return (i);
-}
+int putnbr
 

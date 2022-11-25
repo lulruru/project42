@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:34:40 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 18:09:00 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:12:13 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ void	putptr(uintptr_t	num)
 	else
 	{
 		if (num <= 9 )
-			ft_putchar(num + '0')
+			ft_putchar(num + '0');
 		else
-			ft_putchar(num - 10 +'a')
+			ft_putchar(num - 10 +'a');
 	}
 }
+
+int 
 
