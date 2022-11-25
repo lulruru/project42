@@ -6,11 +6,11 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:34:40 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 14:46:26 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/25 14:48:45 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
 static int	len_ptr(uintptr_t	num)
 {
@@ -41,7 +41,7 @@ static void	putptr(uintptr_t	num)
 	}
 }
 
-int putlen(unsigned long long	num)
+int ft_putlen(unsigned long long	num)
 {
 	int	len;
 

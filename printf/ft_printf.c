@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 14:46:15 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/25 15:09:21 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int main()
 	i = 123;
 	char *str;
 	str = "je suis drole";
-	ft_printf("%s %d", str, i);
+	ft_printf("%d ", 0);
+	printf("%p", i);
 }

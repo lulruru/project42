@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+         #
+#    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 17:31:29 by rencarna          #+#    #+#              #
-#    Updated: 2022/11/24 17:54:19 by rencarna         ###   ########.fr        #
+#    Updated: 2022/11/25 14:55:39 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_putft.c ft_putunsiged.c
+SRC = ft_printf.c ft_putft.c ft_putunisgned.c ft_putnbr.c \
+	ft_putptr.c 
 
 CFLAGS =  -Wall -Werror -Wextra
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunisgned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:36:39 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 17:53:52 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:50:22 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_putunsigned(unsigned int n)
 
 	len = 0;
 	if (n == 0)
-		len += write(1, '0', 1);
+		len += write(1, "(null)", 1);
 	else
 	{
 		nu = ft_itoa(n);
