@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putft.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 17:34:40 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 14:12:13 by russelenc        ###   ########.fr       */
+/*   Created: 2022/11/23 16:05:52 by rencarna          #+#    #+#             */
+/*   Updated: 2022/11/25 14:38:57 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
-int	len_ptr(uintptr_t	num)
+int	ft_putchar(int c)
 {
-	int	len;
-
-	len = 0;
-	while (num != 0)
-	{
-		num /= 16;
-		len++;
-	}
-	return (len);
+	write(1, &c, 1);
+	return (1);
 }
 
-void	putptr(uintptr_t	num)
+int	ft_putstr(char *str)
 {
-	if (num >= 16)
+	int	i;
+
+	i = 0;
+	if (str == NULL)
 	{
-		putptr(num / 16);
-		putptr(num % 16);
+		write(1, "(null)", 6);
+		return (6);
 	}
-	else
+	while (str[i])
 	{
-		if (num <= 9 )
-			ft_putchar(num + '0');
-		else
-			ft_putchar(num - 10 +'a');
+		write(1, &str[i], 1);
+		i++;
 	}
+	return (i);
 }
 
-int 
+size_t	ft_strlen(char *str)
+{
+	size_t	i;
 
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}

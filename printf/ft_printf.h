@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:39:42 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/24 17:59:43 by rencarna         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:40:51 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int		ft_putstr(char *str);
 int		ft_putnbr_base(int n, char *base);
 size_t	ft_strlen(char *str);
 int		ft_putunsigned(unsigned int n);
-
+int     putlen(unsigned long long	num);
 #endif

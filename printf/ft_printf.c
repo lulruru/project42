@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 10:56:48 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/25 14:46:15 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_check(va_list ptr, const char c)
 	else if (c == 's')
 		len += ft_putstr(va_arg(ptr, char *));
 	else if (c == 'p')
-		len += ft_putnbr_hex();
+		len += ft_putlen(va_arg(ptr, unsigned long long));
 	else if ((c == 'd') || (c == 'i'))
 		len += ft_putnbr_base(va_arg(ptr, int), "0123456789");
 	else if (c == 'u')
@@ -60,11 +60,11 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
-/*int main()
+int main()
 {
 	int i;
 	i = 123;
 	char *str;
 	str = "je suis drole";
 	ft_printf("%s %d", str, i);
-}*/
+}
