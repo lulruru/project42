@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 15:22:55 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/27 19:09:38 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	ft_check(va_list ptr, const char c)
 	else if (c == 'p')
 		len += ft_putlen(va_arg(ptr, unsigned long long));
 	else if (c == 'd' || c == 'i')
-		len += ft_putnbr_base(va_arg(ptr, int), "0123456789");
+		len += ft_putnbrdec(va_arg(ptr, int));
 	else if (c == 'u')
 		len += ft_putunsigned(va_arg(ptr, long long));
 	else if (c == 'x')
-		len += ft_putnbr_base(va_arg(ptr, int), "0123456789abcdef");
+		len += ft_putnbr_hex(va_arg(ptr, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
-		len += ft_putnbr_base(va_arg(ptr, int), "0123456789ABCDEF");
+		len += ft_putnbr_hex(va_arg(ptr, unsigned int), "0123456789ABCDEF");
 	else if (c == '%')
 		len += ft_putchar('%');
 	return (len);
@@ -60,7 +60,7 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
-int main()
+/*int main()
 {
 	int i;
 	i = 123;
@@ -68,4 +68,4 @@ int main()
 	str = "je suis drole";
 	ft_printf("%d ", 0);
 	printf("%p", i);
-}
+}*/

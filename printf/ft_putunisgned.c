@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:36:39 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 14:50:22 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/26 21:05:01 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	itoa_len(unsigned int n)
 	return (len);
 }
 
-static char	*ft_itoa(unsigned int n)
+static char	*ft_uitoa(unsigned int n)
 {
 	char	*num;
 	int		i;
@@ -55,7 +55,7 @@ int	ft_putunsigned(unsigned int n)
 		len += write(1, "(null)", 1);
 	else
 	{
-		nu = ft_itoa(n);
+		nu = ft_uitoa(n);
 		len += ft_putstr(nu);
 		free(nu);
 	}

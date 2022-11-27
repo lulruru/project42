@@ -1,28 +1,45 @@
 #include "ft_printf.h"
 
-int	ft_putnbr_base(int n, char *base)
+int	ft_lennmbr(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	while (n != 0)
+	{
+		i++;
+		n /= 16;
+	}
+	return (i);
+}
+
+void	ft_putnbr_base(unsigned int n, char *base)
 {
 	long int	modulo;
 	long int	division;
 	long int	longnb;
-	int			lenbase;
-	static int	i;
 
 	longnb = n;
-	lenbase = ft_strlen(base);
-	if (longnb < 0)
-	{
-		longnb *= (-1);
-		ft_putchar('-');
-		i++;
-	}
-	division = longnb / lenbase;
-	modulo = longnb % lenbase;
+	division = longnb / 16;
+	modulo = longnb % 16;
 	if (division != 0)
 	{
 		ft_putnbr_base(division, base);
-		i++;
 	}
-	write(1, &base[modulo], 1);
-	return (i);
+	ft_putchar(base[modulo]);
+}
+
+int ft_putnbr_hex(unsigned int n, char *base)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return(write(1, "0", 1));
+	else
+		ft_putnbr_base(n, base);
+	len += ft_lennmbr(n);
+	return (len);
+
+
 }
