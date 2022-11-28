@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:34:40 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/25 14:48:45 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/28 12:24:34 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,25 @@ static void	putptr(uintptr_t	num)
 	}
 	else
 	{
-		if (num <= 9 )
+		if (num <= 9)
 			ft_putchar(num + '0');
 		else
 			ft_putchar(num - 10 + 'a');
 	}
 }
 
-int ft_putlen(unsigned long long	num)
+int	ft_putlen(unsigned long long num)
 {
 	int	len;
 
 	len = 0;
-	len += write(1, "0x", 2);
 	if (num == 0)
-		len += write(1, "(nil)", 1);
+		return (ft_putstr("(nil)"));
 	else
 	{
+		len += write(1, "0x", 2);
 		putptr(num);
 		len += len_ptr(num);
 	}
-	return (len);		
+	return (len);
 }
-

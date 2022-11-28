@@ -3,55 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:57:32 by russelenc         #+#    #+#             */
-/*   Updated: 2022/11/28 00:19:34 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/28 12:23:51 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_lenitoa(long int n)
+static int	ft_lenitoa(long int n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (n < 0)
-    {
-        n *= -1;
-        i++;
-    }
-    while (n != 0)
-    {
-        n /= 10;
-        i++;
-    }
-    return (i);
+	i = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
 
-static char *ft_itoa(long int n)
+static char	*ft_itoa(long int n)
 {
-    char    *num;
-    int     i;
+	char	*num;
+	int		i;
 
-    i = ft_lenitoa(n);
-    num = malloc(sizeof(int) * (i+1));
-    if (!num)
-        return (0);
-    num[i--] = '\0';
-    if (n < 0)
-    {
-        num[0] = '-';
-        n *= -1;
-    }
-    while (n != 0)
-    {
-        num[i] = n % 10 + 48;
-        n /= 10;
-        i--;
-    }
-    return (num);
+	i = ft_lenitoa(n);
+	num = malloc(sizeof(int) * (i + 1));
+	if (!num)
+		return (0);
+	num[i--] = '\0';
+	if (n < 0)
+	{
+		num[0] = '-';
+		n *= -1;
+	}
+	while (n != 0)
+	{
+		num[i] = n % 10 + 48;
+		n /= 10;
+		i--;
+	}
+	return (num);
 }
 
 int	ft_putnbrdec(int n)

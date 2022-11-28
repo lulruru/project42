@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:48:37 by rencarna          #+#    #+#             */
-/*   Updated: 2022/11/27 19:09:38 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/11/28 12:24:45 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ int	ft_printf(const char *str, ...)
 
 /*int main()
 {
-	int i;
+	int	i;
+
 	i = 123;
 	char *str;
 	str = "je suis drole";
-	ft_printf("%d ", 0);
-	printf("%p", i);
+	ft_printf("%p /n %X ", i, i);
 }*/
