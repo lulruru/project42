@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 12:07:33 by ruru              #+#    #+#             */
-/*   Updated: 2022/12/01 10:52:43 by russelenc        ###   ########.fr       */
+/*   Created: 2022/11/30 11:46:02 by russelenc         #+#    #+#             */
+/*   Updated: 2022/12/04 16:50:16 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
 
-#ifndef BUFFER_SIZE 
-# define BUFFER_SIZE 5
-#endif
+char	*get_next_line(int fd)
+{
+    char			**line;
+    static char		*stash;
 
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd,&line, 0))
+		return (NULL);
+	
+}
 
+void readintostash(int fd, char **stash)
+{
+	char	*buf;
+	int		i;
 
-#endif
+	i = 1;
+	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	while(!checkreturn(stash) && i != 0)
+	{
+		buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	}
+
+	
+}
