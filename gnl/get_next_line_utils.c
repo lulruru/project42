@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:45:25 by russelenc         #+#    #+#             */
-/*   Updated: 2022/12/04 16:49:19 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/12/09 15:41:53 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ char *ft_strjoin(char *dest, char *src)
 	int		j;
 
 	i = 0;
-	j = ft_strlen(dest);
-	new = malloc(sizeof(char) * (j + ft_strlen(src) + 1));
+	j = 0;
+	if (!dest)
+		dest = ft_calloc(1,1);
+	if (!dest || !src)
+		return(free(dest),free(src), NULL);
+	new = malloc(sizeof(char) * (ft_strlen(dest) + ft_strlen(src) + 1));
 	if (!new)
 		return (0);
 	while (dest[i])
@@ -38,14 +42,13 @@ char *ft_strjoin(char *dest, char *src)
 		new[i] = dest[i];
 		i++;
 	}
-	i = 0;
 	while(src[i]);
 	{
-		new[j + i] = src[i];
-		i++;
+		new[j + i] = src[j];
+		j++;
 	}
 	new[i + j] = '\0';
-	return (new);
+	return (free(dest),new);
 }
 
 int checkreturn(char *str)
@@ -59,4 +62,21 @@ int checkreturn(char *str)
 			return (1);
 	}
 	return (0);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	char	*tab;
+	size_t	i;
+
+	i = 0;
+	tab = malloc(nmemb * size);
+	if (!tab)
+		return (0);
+	while (i < nmemb * size)
+	{
+		tab[i] = 0;
+		i++;
+	}
+	return (tab);
 }
