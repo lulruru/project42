@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:45:25 by russelenc         #+#    #+#             */
-/*   Updated: 2022/12/09 15:41:53 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/12/11 18:02:40 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ char *ft_strjoin(char *dest, char *src)
 		new[i] = dest[i];
 		i++;
 	}
-	while(src[i]);
+	while(src[i])
 	{
-		new[j + i] = src[j];
+		new[i + j] = src[j];
 		j++;
 	}
 	new[i + j] = '\0';

@@ -6,13 +6,13 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:46:02 by russelenc         #+#    #+#             */
-/*   Updated: 2022/12/09 16:10:30 by russelenc        ###   ########.fr       */
+/*   Updated: 2022/12/11 18:00:42 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *ft_readfd(int fd, char *buffle)
+char	*ft_readfd(int fd, char *buffle)
 {
 	int		r;
 	char	*save;
@@ -36,7 +36,7 @@ char *ft_readfd(int fd, char *buffle)
 	return (buffle);
 }
 
-char *cpyline(char *line)
+char	*cpyline(char *line)
 {
 	char	*str;
 	int		i;
@@ -44,7 +44,7 @@ char *cpyline(char *line)
 
 	i = 0;
 	len = 0;
-	if (!line)
+	if (line == NULL)
 		return (0);
 	if (line[0] == 0)
 		return (NULL);
@@ -66,14 +66,41 @@ char *cpyline(char *line)
 }
 char	*savenext(char *buffle)
 {
-	
+	char	*new;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if (!buffle)
+		return (NULL);
+	while(buffle[i] != '\0' && buffle[i] != '\n')
+		i++;
+	if (buffle[i] == '\n')
+		i++;
+	new = malloc(sizeof(char) * (ft_strlen(buffle) - i + 1));
+	if (!new)
+		return (NULL);
+	while (buffle[i])
+	{
+		new[j] = buffle[i];
+		i++;
+		j++;
+	}
+	new[j] = '\0';
+	free(buffle);
+	return (new);
 }
 
 char	*get_next_line(int fd)
 {
     char		*line;
-    static char	*buffle;
+	static char	*buffle[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd,&line, 0))
 		return (0);
+	buffle[fd] = ft_readfd(fd, buffle[fd]);
+	line = cpyline(buffle[fd]);
+	buffle[fd] = savenext(buffle[fd]);
+	return (line);
 }
